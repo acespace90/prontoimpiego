@@ -1,0 +1,96 @@
+/*------------------------------------*\
+    Keyframes
+\*------------------------------------*/
+// Usage: @include keyframes(slide-down)
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+/*------------------------------------*\
+    Animation
+\*------------------------------------*/
+// Usage: @include animation('slide-down 5s 3');
+@mixin animation($str) {
+    animation: #{$str};
+}
+
+/*------------------------------------*\
+    Clearfix
+\*------------------------------------*/
+@mixin gnv-clearfix(){
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/*------------------------------------*\
+    Border Radius
+\*------------------------------------*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/*------------------------------------*\
+    Box Shadow
+\*------------------------------------*/
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $spread: 0px, $color: #CCC) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+}
+@mixin inset-box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $spread: 0px, $color: #CCC) {
+  -webkit-box-shadow: inset $horizontal $vertical $blur $spread $color;
+  -moz-box-shadow: inset $horizontal $vertical $blur $spread $color;
+  box-shadow: inset $horizontal $vertical $blur $spread $color;
+}
+
+/*------------------------------------*\
+    Background gradient top to bottom
+\*------------------------------------*/
+@mixin bg-gradient-t2b($start-colour, $end-colour) {
+    background-color: $start-colour;
+    background: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+    background: -webkit-linear-gradient(top, $start-colour, $end-colour);
+    background:    -moz-linear-gradient(top, $start-colour, $end-colour);
+    background:     -ms-linear-gradient(top, $start-colour, $end-colour);
+    background:      -o-linear-gradient(top, $start-colour, $end-colour);
+    background:         linear-gradient(to bottom, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
+}
+
+/*------------------------------------*\
+    Background gradient left to right
+\*------------------------------------*/
+@mixin bg-gradient-l2r($start-colour, $end-colour) {
+    background-color: $start-colour;
+    background: -webkit-gradient(linear, left top, right top, from($start-colour), to($end-colour));
+    background: -webkit-linear-gradient(left, $start-colour, $end-colour);
+    background:    -moz-linear-gradient(left, $start-colour, $end-colour);
+    background:     -ms-linear-gradient(left, $start-colour, $end-colour);
+    background:      -o-linear-gradient(left, $start-colour, $end-colour);
+    background:         linear-gradient(to right, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
+}

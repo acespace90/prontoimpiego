@@ -1,0 +1,30 @@
+{% extends "styleguide/layouts/_core.html.twig"%}
+
+{% macro recursiveFilesInclude(block, type, level) %}
+  {% if (level==0) %}
+    <h2 class="sg__main__toggle sg__title"><a href="#"><i class="fa fa-chevron-circle-down"></i> {{block.name}}</a></h2>
+    <div class="sg__main__block">
+      <div class="small-12">
+  {% endif %}
+
+  {% if block.children is defined and block.children|length %}
+    {% for child in block.children %}
+      {{ _self.recursiveFilesInclude(child, type ~ "/" ~ block.name, level + 1) }}
+    {% endfor %}
+  {% else %}
+    {% include "#{type}/#{block.name}.html.twig" %}
+  {% endif %}
+
+  {% if (level==0) %}
+    </div>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+{% block content %}
+  {% for core in menu.core %}
+    <div class="row">
+    {{ _self.recursiveFilesInclude(core, 'core', 0) }}
+    </div>
+  {% endfor %}
+{% endblock %}

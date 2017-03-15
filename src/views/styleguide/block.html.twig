@@ -1,0 +1,37 @@
+{% extends "styleguide/layouts/_block.html.twig"%}
+
+{% block content %}
+  <div class="row">
+    
+    <h3 class="sg__subtitle sg__subtitle--block">Block: {{ block }}</h3>
+    <div class="sg__tags">
+    {% if with_js or with_modificators or with_contents %}
+        {% if with_js %}<span class="label">With Javascript</span>{% endif %}
+        {% if with_modificators %}<span class="label warning">With Modificators</span>{% endif %}
+        {% if with_contents %}<span class="label info">With Contents</span>{% endif %}
+    {% endif %}
+    </div>
+
+    {% for file in block_filename %}
+    <div class="sg__block">
+      {% set b %}
+        {% include "blocks/#{file}.html.twig" %}
+      {% endset %}
+
+      <h4 class="sg__block__title">{{ file|replace({'/': ''}) }} <a class="sg__block__cta"># Get the code</a></h4>
+
+      {% if testing == false %}
+      <div class="sg__block__code">
+        <pre><code class="hljs html">{{b|trim|e}}</code></pre>
+      </div>
+      {% endif %}
+
+      {% include "blocks/#{file}.html.twig" %}
+
+      <div class="sg__separator"></div>
+    </div>
+    {% endfor %}
+
+  </div>
+{% endblock %}
+

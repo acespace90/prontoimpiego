@@ -1,0 +1,74 @@
+.button{
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @include font-scale(small);
+  font-weight: fw(bold);
+  text-align: center;
+  text-decoration: none;
+  @include gnv-button-color(#fff, #ccc);
+  @include gnv-button-size(base);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  
+  // Styles
+  &--rounded{
+    @include border-radius($base-radius);
+  }
+  &--simple, &--simple:hover{
+    background: transparent;
+    color: inherit;
+  }
+  &--icon{
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      margin-right: 5px;
+      * {
+        fill: #fff;
+        stroke: #fff;
+      }
+    }
+  }
+  
+  // Sizes
+  &--x-small{
+    @include gnv-button-size(x-small);
+    @include font-scale(x-small);
+  }
+  &--small{
+    @include gnv-button-size(small);
+  }
+  &--big{
+    @include gnv-button-size(big);
+  }
+
+  // Colors
+  &--primary{
+    @include gnv-button-color( #fff, color(primary) );
+    &.button--inverse{
+      @include gnv-button-color-inverse( color(primary), transparent );      
+    }
+    &.button--simple, &.button--simple:hover{
+      color: color(primary);
+      background: transparent;
+    }
+  }
+  &--secondary{
+    @include gnv-button-color( #fff, color(secondary) );
+    &.button--inverse{
+      @include gnv-button-color-inverse( color(secondary), transparent );      
+    }
+    &.button--simple, &.button--simple:hover{
+      color: color(secondary);
+      background: transparent;
+    }
+  }
+
+}

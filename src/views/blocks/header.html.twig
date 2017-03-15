@@ -1,0 +1,18 @@
+<header class="b-header">
+  <div class="b-header__row row">
+    <div class="b-header__logo column">
+      <a href="#">
+        {{ import_svg(app.build_dir ~ 'images/svgs/logo.svg') }}
+      </a>
+    </div>
+    <nav class="b-header__menu column">
+      <ul>
+        {% for i in 0..3 %}
+          <li>
+            <a href="#">link</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

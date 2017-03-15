@@ -1,0 +1,12 @@
+.o-bottom-spacing-none{
+  margin-bottom: 0;
+}
+.o-bottom-spacing-small{
+  margin-bottom: ($base-vertical-spacing-unit / 2) * 1;
+}
+.o-bottom-spacing{
+  margin-bottom: $base-vertical-spacing-unit;
+}
+.o-bottom-spacing-big{
+  margin-bottom: ($base-vertical-spacing-unit * 2) * 1;
+}

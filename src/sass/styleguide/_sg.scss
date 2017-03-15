@@ -1,0 +1,203 @@
+$column-gutter: 20px;
+
+@mixin color_iteration($map, $function_name){
+  $index: 1;
+  @each $name, $color in $map {
+    .sg__color:nth-child(#{$index}) {
+      margin-bottom: 20px;
+      &:before{
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        background-color: $color;
+        content: "";
+        display: block;
+        height: 60px;
+      }
+
+      &:after{
+        border: 1px solid #ccc;
+        border-top: 0;
+        display: block;
+        width: 100%;
+        padding: 5px;
+        text-align: left;
+        content: $color + ' \A\ ' + $name + ' \A\ $include ' + $function_name + '(' + $name + ')';
+        white-space: pre;
+        background-color: #ffffff;
+        color: #000000;
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
+    $index: $index + 1;
+  }
+}
+
+@mixin typo_text{
+  @include font-scale(base, $font-secondary);
+  color: gray(xdark);
+  a{
+    text-decoration: underline;
+    color: gray(xdark);
+    &:hover{
+      color: color(verde);
+    }
+  }
+}
+
+.sg{
+
+  &__colors{
+    @include color_iteration($colors, 'color');
+  }
+
+  &__grays{
+    @include color_iteration($grays, 'gray');
+  }
+
+  &__title{
+    @extend .small-12 !optional;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin: 30px 0 10px;
+    display: inline-block;
+    a{
+      color: #333;
+    }
+  }
+
+  &__subtitle{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    clear: both;
+    border-bottom: 2px solid color(primary);
+    color: color(primary);
+    &--block{
+      margin-bottom: 0;
+      @extend .col-sm-12 !optional;
+    }
+  }
+
+  &__sectiontitle{
+    font-size: 20px;
+    margin: 15px 0 5px;
+  }
+
+  &__main{
+    &__block{
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__tags{
+    @extend .col-sm-12 !optional;
+    margin-bottom: 30px;
+    span{
+      margin-bottom: 0;
+    }
+  }
+  &__separator{
+    border-bottom: 1px dotted #dedede;
+    font-size: 0;
+    height: 0;
+    margin-top: 25px;
+  }
+
+  &__font{
+    margin-bottom: 10px;
+    &__title{
+      font-size: 20px;
+      margin: 15px 0 5px;
+    }
+    &__alphabet{
+      margin: 0 0 5px;
+    }
+  }
+
+  &__block{
+    @extend .col-sm-12 !optional;
+    margin-bottom: 25px;
+    &__title{
+      display: block;
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+    &__cta{
+      display: inline-block;
+      font-size: 12px;
+      line-height: 16px;
+      background-color: #b0b0b0;
+      color: #fff;
+      padding: 2px 5px;
+      font-weight: normal;
+      text-transform: none;
+      margin-left: 10px;
+      vertical-align: text-top;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: #666;
+      }
+    }
+    &__code{
+      display: none;
+      margin: 0 0 20px;
+    }
+  }
+
+}
+
+@each $ff, $map in $fonts {
+  @each $size, $qualcosa in $map {
+    @if $size != 'stack'{
+      $name: map-get($map, "stack");
+      $fs: calc-font-size($map, $size);
+      $lh: calc-line-height($map, $size);
+
+      .#{$ff}.#{$size}{
+        @include font-scale($size, $map, false);
+        light{
+          display: inline;
+          font-weight: lighter;
+        }
+        &:before{
+          content: $name + " (" + $fs + ", " + $lh + ")";
+          background-color: #efefef;
+          display: block;
+          padding: 5px 5px;
+          margin-bottom: 5px;
+          font-size: 1rem;
+          line-height: 1em;
+        }
+
+        @if(map-has-key($qualcosa, media)){
+          @each $viewport, $delta in map-get($qualcosa, media) {
+            @if($viewport == "small"){
+              @media #{$small-only}{
+                &:before{
+                  content: $name + " (" + $fs*$delta + ", " + $lh*$delta + ")";
+                }
+              }
+            }
+            @if($viewport == "medium"){
+              @media #{$medium-only}{
+                &:before{
+                  content: $name + " (" + $fs*$delta + ", " + $lh*$delta + ")";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

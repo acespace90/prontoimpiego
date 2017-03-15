@@ -1,0 +1,13 @@
+.sass-cache/
+node_modules/
+temp/
+/vendor
+.rev
+*.log
+*.sublime*
+dploy.yaml
+ec2-key.pem
+bower_components/
+.ruby-version
+cache/*
+.DS_Store

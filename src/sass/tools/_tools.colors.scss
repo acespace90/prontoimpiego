@@ -1,0 +1,17 @@
+@function color($name) {
+  @if(map-has-key($colors, $name)){
+    @return map-get($colors, $name);
+  } @else {
+    @warn "COLOR: not exist " + $name;
+  }
+  @return #ff0000;
+}
+
+@function gray($weight: base) {
+  @if(map-has-key($grays, $weight)){
+    @return map-get($grays, $weight);
+  } @else {
+    @warn "GRAY: not exist " + $weight;
+  }
+  @return #ff0000;
+}

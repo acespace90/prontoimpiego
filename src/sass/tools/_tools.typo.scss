@@ -1,0 +1,86 @@
+// FUNCTIONS
+@function _fontset-feature($family, $feature, $set: 'base'){
+  $result: map-get(map-get($family, $set), $feature);
+  @return($result * 1);
+}
+
+@function calc-font-size($family, $set) {
+  @return _fontset-feature($family, font-size, $set);
+}
+
+@function calc-line-height($family, $set) {
+  @return _fontset-feature($family, line-height, $set);
+}
+
+@function _fontset-family($family) {
+  $result: map-get($family, stack);
+  @return unquote($result);
+}
+
+@function remCalc($fontsize, $base: $base-font-sizing) {
+    @return ($fontsize / $base) * 1 + rem;
+}
+
+@function fw($name) {
+  @if(map-has-key($f-weights, $name)){
+    @return map-get($f-weights, $name);
+  } @else {
+    @warn "Weign: Non esiste il weight " + $name;
+  }
+  @return normal;
+}
+
+// MIXINS
+@mixin ff-primary{
+  font-family:'Avenir Next W00';
+}
+
+@mixin typo($fontsize, $lineheight: 0px){
+  font-size: $fontsize * 1 + px;
+  font-size: remCalc($fontsize);
+  @if $lineheight > 0{
+    $lh: ($lineheight / $fontsize) * 1em;
+    line-height: $lh;
+  }
+}
+
+@mixin font-scale ($font-size, $family: $font-default, $fixed-size: false) {
+  $fs: calc-font-size($family, $font-size);
+  $lh: calc-line-height($family, $font-size);
+
+  font-family: _fontset-family($family);
+  @if($family != $font-default){
+    font-style: italic;
+  }
+  @include typo($fs, $lh);
+
+  @if($fixed-size == false and map-has-key(map-get($family, $font-size), media)){
+    @each $viewport, $delta in map-get(map-get($family, $font-size), media) {
+      @if($viewport == "small"){
+        @media #{$small-only}{
+          @include typo($fs * $delta, $lh * $delta);
+        }
+      }
+      @if($viewport == "medium"){
+        @media #{$medium-only}{
+          @include typo($fs * $delta, $lh * $delta);
+        }
+      }
+    }
+  }
+}
+
+// HELPERS
+@each $ff, $map in $fonts {
+  @each $size, $qualcosa in $map {
+    @if $size != 'stack'{
+      $name: map-get($map, "stack");
+      $fs: calc-font-size($map, $size);
+      $lh: calc-line-height($map, $size);
+
+      .#{$ff}.#{$size}{
+        @include font-scale($size, $map, false);
+      }
+    }
+  }
+}

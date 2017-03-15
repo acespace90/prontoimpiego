@@ -1,0 +1,12 @@
+$grid-row-width: 					1220px;
+$grid-column-count: 			12;
+$grid-column-gutter: (
+	xsmall: 30px,
+  small:  30px,
+  medium: 30px,
+  large:  30px
+);
+$grid-column-align-edge: 	true;
+$block-grid-max: 					8;
+
+@include foundation-grid;

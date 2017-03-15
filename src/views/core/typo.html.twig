@@ -1,0 +1,22 @@
+
+{% set alfabeto = 'abcdefghijklmnopqrstuvxywzòàùèì' %}
+{% for ff in ['font-primary'] %}
+  <h3 class="sg__subtitle">{{ ff }}</h3>
+  {% for size in ['x-small', 'small', 'base', 'mid', 'large', 'x-large'] %}
+    <section class="sg__font large-6 columns">
+      <h4 class="sg__font__title">{{ size }}</h4>
+      <div class="sg__font__alphabet {{ ff }} {{ size }}">
+        {{ alfabeto }}
+        <strong>{{ alfabeto }}</strong>
+        <i>{{ alfabeto }}</i>
+        <strong><i>{{ alfabeto }}</i></strong>
+        <light>{{ alfabeto }}</light>
+      </div>
+      {% if ff == 'font-primary' %}
+      <code class="sg__font__code">@include font-scale({{ size }});</code>
+      {% else %}
+      <code class="sg__font__code">@include font-scale({{ size }}, ${{ ff }});</code>
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endfor %}

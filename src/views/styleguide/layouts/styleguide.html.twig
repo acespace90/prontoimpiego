@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ app.project }} Styleguide</title>
+    <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/572798ac-a646-44f6-91d3-a7889bcd46d2.css"/>
+    
+    {% if app.env == "dev" %}
+      <link rel="stylesheet" href="{{ app.asset_url }}css/styleguide/main.css">
+    {% else %}
+      <link rel="stylesheet" href="{{ app.asset_url }}css/styleguide/main.min.css">
+    {% endif %}
+
+    <script src="{{ app.asset_url }}js/styleguide/modernizr.js"></script>
+    <script src="{{ app.asset_url }}js/styleguide/jquery.min.js"></script>
+
+    <base target="iframe_styleguide" />
+  </head>
+  <body>
+
+    {% macro recursiveMenuBlock(block, app) %}
+      <li{% if block.children is defined and block.children|length %} class="has-dropdown"{%endif %}>
+        <a href="{{ app.base_url }}{{ block.url|default('#') }}" target="iframe-styleguide" id="{{ block.name }}">{{ block.name }}</a>
+        {% if block.children is defined and block.children|length %}
+          <ul class="dropdown">
+            {% for child in block.children %}
+                {{ _self.recursiveMenuBlock(child, app) }}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endmacro %}
+
+    {% macro recursiveMenuOffCanvas(block, app) %}
+      <li{% if block.children is defined and block.children|length %} class="icon icon-arrow-left"{%endif %}>
+        <a href="{{ app.base_url }}{{ block.url|default('#') }}" target="iframe-styleguide" id="{{ block.name }}">{{ block.name }}</a>
+        {% if block.children is defined and block.children|length %}
+          <div class="mp-level">
+            <h2>{{ block.name }}</h2>
+            <ul>
+            {% for child in block.children %}
+                {{ _self.recursiveMenuOffCanvas(child, app) }}
+            {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </li>
+    {% endmacro %}
+
+    {% macro recursiveMenuSearch(block, app) %}
+        {% if block.children is defined and block.children|length %}
+          {% for child in block.children %}
+            {{ _self.recursiveMenuSearch(child, app) }}
+          {% endfor %}
+        {% else %}
+        <option data-value="{{ app.base_url }}{{ block.url|default('#') }}" value="{{ block.name }}"></option>
+        {% endif %}
+    {% endmacro %}
+
+    <!-- Push Wrapper -->
+    <div class="container">
+      <div class="mp-pusher" id="mp-pusher">
+
+        <!-- mp-menu -->
+        <nav id="mp-menu" class="mp-menu">
+          <div class="mp-level">
+            <h2>All Patterns</h2>
+            <ul>
+              <li>
+                <a href="{{ app.base_url }}styleguide/main" target="iframe-styleguide">Global</a>
+              </li>
+              <li class="icon icon-arrow-left">
+                <a href="#">Core</a>
+                <div class="mp-level">
+                  <h2>Core</h2>
+                  <ul>
+                    {% for core in menu.core %}
+                      {{ _self.recursiveMenuOffCanvas(core, app) }}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              <li class="icon icon-arrow-left">
+                <a href="#">Blocks</a>
+                <div class="mp-level">
+                  <h2>Blocks</h2>
+                  <ul>
+                    {% for block in menu.blocks %}
+                      {{ _self.recursiveMenuOffCanvas(block, app) }}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              <li class="icon icon-arrow-left">
+                <a href="#">Pages</a>
+                <div class="mp-level">
+                  <h2>Pages</h2>
+                  <ul>
+                    {% for page in menu.pages %}
+                      {{ _self.recursiveMenuOffCanvas(page, app) }}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- /mp-menu -->
+
+        <div class="scroller"><!-- this is for emulating position fixed of the nav -->
+          <div class="scroller-inner">
+
+            {% block menu %}
+              <nav class="top-bar" data-topbar>
+                <ul class="title-area">
+                  <li class="name">
+                    <h1><a id="trigger" href="styleguide"><i class="fa fa-bars"></i> {{ app.project }} Styleguide</a></h1>
+                  </li>
+                </ul>
+
+                <section class="top-bar-section">
+                  <!-- Right Nav Section -->
+                  <ul class="left">
+                    <li>
+                      <a href="{{ app.base_url }}styleguide/main" target="iframe-styleguide"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="has-dropdown">
+                      <a href="#">Core</a>
+                      <ul class="dropdown">
+                        {% for core in menu.core %}
+                          {{ _self.recursiveMenuBlock(core, app) }}
+                        {% endfor %}
+                      </ul>
+                    </li>
+                    <li class="has-dropdown">
+                      <a href="#">Blocks</a>
+                      <ul class="dropdown">
+                        {% for blocco in menu.blocks %}
+                          {{ _self.recursiveMenuBlock(blocco, app) }}
+                        {% endfor %}
+                      </ul>
+                    </li>
+                    <li class="has-dropdown">
+                      <a href="#">Pages</a>
+                      <ul class="dropdown">
+                        {% for page in menu.pages %}
+                          {{ _self.recursiveMenuBlock(page, app) }}
+                        {% endfor %}
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <span>Device</span>
+                    </li>
+
+                    <li class="icon active">
+                      <a href="#" class="device" data-device="desktop"><i class="fa fa-desktop"></i></a>
+                    </li>
+                    <li class="icon">
+                      <a href="#" class="device" data-device="tablet-landscape"><i class="fa fa-tablet fa-rotate-90"></i></a>
+                    </li>
+                    <li class="icon">
+                      <a href="#" class="device" data-device="tablet"><i class="fa fa-tablet"></i></a>
+                    </li>
+                    <li class="icon">
+                      <a href="#" class="device" data-device="mobile-landscape"><i class="fa fa-mobile fa-rotate-90"></i></a>
+                    </li>
+                    <li class="icon">
+                      <a href="#" class="device" data-device="mobile"><i class="fa fa-mobile"></i></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="icon">
+                      <a href="#" target="_blank" id="trello"></a>
+                    </li>
+                  </ul>
+                  <ul class="right">
+                    <li class="has-form search">
+                      <div id="sg_search_box" class="search__box">
+                        <input type="text" id="sg_pattern_search" list="patterns" placeholder="Search pattern">
+                        <datalist id="patterns">
+                          {% for core in menu.core %}
+                            {{ _self.recursiveMenuSearch(core, app) }}
+                          {% endfor %}
+                          {% for block in menu.blocks %}
+                            {{ _self.recursiveMenuSearch(block, app) }}
+                          {% endfor %}
+                          {% for page in menu.pages %}
+                            {{ _self.recursiveMenuSearch(page, app) }}
+                          {% endfor %}
+                        </datalist>
+                      </div>
+                      <a id="sg_search" class="search__cta" href="#"><i class="fa fa-search"></i></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="icon">
+                      <a id="view_outside" href="#">
+                        <i class="fa fa-times-circle-o"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+              </nav>
+            {% endblock %}
+
+            <div id="sg__wrap">
+              <div id="sg__container">
+                {% block content %}{% endblock %}
+              </div>
+            </div>
+
+          </div><!-- /scroller-inner -->
+        </div><!-- /scroller -->
+
+      </div><!-- /pusher -->
+    </div>
+
+
+    {% block javascripts %}
+      <script src="{{ app.asset_url }}js/styleguide/fastclick.js"></script>
+      <script src="{{ app.asset_url }}js/styleguide/foundation.min.js"></script>
+      <script src="{{ app.asset_url }}js/styleguide/classie.js"></script>
+      <script src="{{ app.asset_url }}js/styleguide/mlpushmenu.js"></script>
+      <script>
+        $(document).foundation();
+        new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+      </script>
+      <script src="{{ app.asset_url }}js/styleguide/styleguide.js"></script>
+    {% endblock %}
+
+  </body>
+</html>

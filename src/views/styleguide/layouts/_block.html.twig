@@ -1,0 +1,14 @@
+{% extends "layouts/layout.html.twig"%}
+
+{% block javascripts_head %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+{% endblock %}
+
+
+{% block javascripts_files %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <script src="{{ app.asset_url }}js/styleguide/sg.js"></script>
+  {% if with_js %}
+  <script src="{{ app.asset_url }}js/blocks/{{ block_name }}.js"></script>
+  {% endif %}
+{% endblock %}

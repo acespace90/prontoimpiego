@@ -1,0 +1,22 @@
+.o-with-floating-label + label.floating-label {
+  @include font-scale(base);
+  color: gray(base);
+  position: relative;
+  top: -33px;
+  left: 10px;
+  transition: all .3s ease;
+  height: 0;
+  cursor: text;
+  font-weight: fw(normal);
+}
+
+.o-with-floating-label:focus, 
+.o-with-floating-label:valid {
+  & + label.floating-label {
+  	color: color(primary);
+    @include font-scale(x-small);
+    top: -60px;
+    left: 0;
+    font-weight: fw(bold);
+  }
+}

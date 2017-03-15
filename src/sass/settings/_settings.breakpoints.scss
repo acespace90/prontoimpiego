@@ -1,0 +1,9 @@
+$breakpoints: (
+  xsmall:  	0px,
+  small:   	481px,
+  medium:   641px,
+  large:    769px,
+  xlarge:   1025px,
+  xxlarge:  1181px
+);
+$breakpoint-classes: (xsmall small medium large xlarge) !default;

@@ -1,0 +1,12 @@
+{% extends "styleguide/layouts/_core.html.twig"%}
+
+{% block content %}
+
+  <div class="sg__main__block row">
+    <div class="small-12 columns">
+      {% include "core/#{block_filename}" %}
+    </div>
+  </div>
+
+{% endblock %}
+

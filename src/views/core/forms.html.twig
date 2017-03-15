@@ -1,0 +1,52 @@
+  <h3 class="sg__subtitle">Form</h3>
+
+  <form class="base-form">
+    
+    <fieldset class="row">
+      <div class="base-form__wrapper base-form__wrapper--full column">
+        <label for="with-label">With label</label>
+        <input id="with-label" type="text" placeholder="Placeholder here..." />
+      </div>
+    </fieldset>
+
+    <fieldset class="row o-bottom-spacing-small">
+      <div class="base-form__wrapper base-form__wrapper--full column">
+        <input type="text" placeholder="Without label..." />
+      </div>
+    </fieldset>
+
+    <fieldset class="row">
+      <div class="base-form__wrapper base-form__wrapper--full column">
+        <input type="text" id="floating-label" class="o-with-floating-label" required />
+        <label for="floating-label" class="floating-label">Floating Label Text</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="row">
+      <div class="base-form__wrapper base-form__wrapper--half column">
+        <label for="with-label-2">With label</label>
+        <input id="with-label-2" type="text" placeholder="Placeholder here..." />
+      </div>
+      <div class="base-form__wrapper base-form__wrapper--half column">
+        <label for="with-label-3">With label</label>
+        <input id="with-label-3" type="text" placeholder="Placeholder here..." />
+      </div>
+    </fieldset>
+
+    <fieldset class="row">
+      <div class="base-form__wrapper base-form__wrapper--full column">
+        <label>Label</label>
+        <select>
+          <option value="option-0">Seleziona</option>
+          {% for i in 1..4 %}
+            <option value="option-{{ i }}">Option {{ i }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <button type="submit" class="button button--primary button--rounded">Some text</button>
+    </fieldset>
+
+  </form>

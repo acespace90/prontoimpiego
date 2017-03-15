@@ -1,0 +1,72 @@
+.base-form{
+	
+	fieldset{
+		border: none;
+	}
+	
+	&__wrapper{
+		margin-bottom: $base-vertical-spacing-unit / 2;
+		display: inline-block;
+
+		&--full{
+			@include grid-column-size(12);
+		}
+
+		&--half{
+			@include grid-column-size(6);
+		}
+	}
+
+	label{
+		display: block;
+		width: 100%;
+		@include font-scale(base);
+		font-weight: fw(bold);
+		color: gray(dark);
+	}
+
+	input[type="text"], 
+	input[type="password"], 
+	input[type="date"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="month"], 
+	input[type="week"], 
+	input[type="email"], 
+	input[type="number"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="time"], 
+	input[type="url"], 
+	input[type="color"], 
+	textarea {
+		outline: none;
+		display: block;
+		width: 100%;
+		border: 1px solid gray(base);
+		@include border-radius($base-radius);
+		padding: 12px 10px;
+		background: white;
+		transition: border .3s ease;
+		&:focus{
+			border: solid 1px color(primary);
+		}
+		&::-webkit-input-placeholder,&::-webkit-input-placeholder {
+	    color: gray(base);
+	    @include font-scale(base);
+	  }
+	  &:-moz-placeholder, &::-moz-placeholder {
+	    color: gray(base);
+	    @include font-scale(base);
+	  }
+	}
+
+	select{
+		width: 100%;
+		border: 1px solid gray(base);
+		@include border-radius($base-radius);
+		background: white;
+		height: 44px;
+	}
+
+}

@@ -1,0 +1,23 @@
+h1 {
+  @include font-scale(x-large);
+}
+
+h2 {
+  @include font-scale(large);
+}
+
+h3 {
+  @include font-scale(mid);
+}
+
+h4 {
+  @include font-scale(base);
+}
+
+h5 {
+  @include font-scale(small);
+}
+
+h6 {
+  @include font-scale(x-small);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "leanux",
+  "version": "0.0.1",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Luca Scarpa",
+      "email": "luca.scarpa@gnvpartners.com",
+      "homepage": "http://www.gnvpartners.com",
+      "role": "Frontend Developer"
+    }
+  ],
+  "require": {
+    "silex/silex": "~1.1",
+    "symfony/yaml": "2.6.x-dev",
+    "deralex/yaml-config-service-provider": "1.0.x-dev",
+    "twig/twig": ">=1.8,<2.0-dev",
+    "symfony/twig-bridge": "~2.3"
+  },
+  "autoload": {
+    "psr-0": {
+      "AppBundle": "src/"
+    }
+  }
+}

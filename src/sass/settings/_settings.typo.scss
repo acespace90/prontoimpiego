@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$base-font-sizing: 16;
+
+// Fonts
+$ff-primary: (
+
+  stack: ' "Source Sans Pro", sans-serif ',
+
+  x-small: (
+    font-size:    12,
+    line-height:  16
+  ),
+
+  small: (
+    font-size:    14,
+    line-height:  20
+  ),
+
+  base: (
+    font-size:    16,
+    line-height:  24
+  ),
+
+  mid: (
+    font-size:    23,
+    line-height:  31
+  ),
+
+  large: (
+    font-size:    31,
+    line-height:  42,
+  ),
+
+  x-large: (
+    font-size:    40,
+    line-height:  55,
+  ),
+
+);
+
+$fonts: (
+  font-primary: $ff-primary
+);
+
+$font-default: $ff-primary;
+
+// Weights
+$f-weights: (
+  light:      300,
+  normal:     400,
+  bold:       700,
+  extrabold:  800,
+  heavy:      900
+);

@@ -1,0 +1,27 @@
+{
+  "name": "coop",
+  "description": "coop website",
+  "main": "index.js",
+  "authors": [
+    "Gnv"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "leanux",
+    "website"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "https://bitbucket.org/gnvpartners/coop-alleanza#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.2"
+  }
+}

@@ -1,0 +1,45 @@
+.b-header {
+	background: gray(base);
+	width: 100%;
+	padding: $base-spacing-unit 0;
+	
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__logo {
+		text-align: center;
+		margin-bottom: $base-vertical-spacing-unit / 2;
+		@include breakpoint(small up) {
+			@include grid-column-size(2);
+			margin-bottom: 0;
+		}
+	}
+
+	&__menu {
+		@include breakpoint(small up) {
+			@include grid-column-size(10);
+		}
+		ul {
+			@include breakpoint(small up) {
+				float: right;
+			}
+			li {
+				width: (100 / 4) * 1%;
+				float: left;
+				@include breakpoint(small up) {
+					width: auto;
+				}
+				a {
+					display: block;
+					padding: 0 20px;
+					text-transform: uppercase;
+					@include font-scale(small);
+				}
+			}
+		}
+	}
+
+}
