@@ -1,10 +1,12 @@
 {
-  "name": "coop",
+  "name": "prontoimpiego",
   "version": "0.0.1",
-  "description": "coop website",
+  "description": "prontoimpiego website",
   "main": "index.js",
   "dependencies": {
     "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-svgmin": "^1.2.3",
     "path": "^0.12.7"
   },
   "devDependencies": {
@@ -27,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/gnvpartners/coop-alleanza.git"
+    "url": "https://github.com/acespace90/prontoimpiego.git"
   },
   "keywords": [
     "leanux",
@@ -35,5 +37,5 @@
   ],
   "author": "",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/gnvpartners/coop-alleanza#readme"
+  "homepage": "https://github.com/acespace90/prontoimpiego.git"
 }

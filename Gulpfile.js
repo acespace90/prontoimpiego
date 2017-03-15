@@ -6,14 +6,15 @@ var gulp           =  require('gulp'),
 
     newer          =  require('gulp-newer'),
     imagemin       =  require('gulp-imagemin'),
+    svgmin         =  require('gulp-svgmin'),
     rename         =  require('gulp-rename'),
-    
+
     sass           =  require('gulp-sass'),
     sassGlob       =  require('gulp-sass-glob'),
     sourcemaps     =  require('gulp-sourcemaps'),
     cssmin         =  require('gulp-cssmin'),
     autoprefixer   =  require('gulp-autoprefixer'),
-    
+
     browserSync    =  require('browser-sync').create(),
 
     // This two modules are for handling the Delete Event on Watch
@@ -51,9 +52,27 @@ gulp.task('sass-styleguide', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
+// Copy Bower Css
+gulp.task('copy-bower-css', function () {
+  gulp.src([
+    // bwpath + 'jquery-date-range-picker/dist/daterangepicker.min.css',
+  ])
+    .pipe(rename({
+      prefix: "_",
+      extname: '.scss'
+    }))
+    // remove the '.min' suffix
+    .pipe(rename(function(opt) {
+      opt.basename = opt.basename.replace('.min', '');
+      return opt;
+    }))
+    .pipe(gulp.dest('./src/sass/vendor'))
+});
+
+
 /* -------------- Imagemin -------------- */
 
-gulp.task('imagemin', function () {
+gulp.task('imagemin', ['svgmin'] ,function () {
   gulp.src('src/images/**')
     .pipe(newer('build/images/'))
     .pipe(imagemin({
@@ -63,12 +82,28 @@ gulp.task('imagemin', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
+/* -------------- SVGmin -------------- */
+
+gulp.task('svgmin', function () {
+  return gulp.src('src/images/svgs/**/*.svg')
+    .pipe(svgmin({
+      plugins: [{
+        removeDoctype: true,
+      },{
+        removeComments: true,
+      },{
+        removeStyleElement: true
+      }]
+    }))
+    .pipe(gulp.dest('build/images/svgs/'))
+});
+
 /* -------------- Js -------------- */
 
 gulp.task('headjs', function() {
   gulp.src([])
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(concat('head.min.js'))
+    .pipe(concat('head.js'))
     .pipe(sourcemaps.write('../js'))
     .pipe(gulp.dest('build/js'));
 });
@@ -76,7 +111,6 @@ gulp.task('headjs', function() {
 gulp.task('footerjs', function() {
   gulp.src([
     bwpath + 'jquery/dist/jquery.min.js',
-    bwpath + 'foundation-sites/dist/foundation.min.js',
   ])
   .pipe(sourcemaps.init({loadMaps: true}))
   .pipe(concat('footer.min.js'))
@@ -84,8 +118,9 @@ gulp.task('footerjs', function() {
   .pipe(gulp.dest('build/js'));
 });
 
+
 gulp.task('blockjs', function() {
-  gulp.src('src/js/blocks/*.js')
+  gulp.src('src/js/blocks/**/*.js')
     .pipe(gulp.dest('build/js/blocks'));
 });
 
@@ -120,7 +155,7 @@ gulp.task('watch', function () {
 
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: "localhost/itcss",
+    proxy: "localhost/lol",
     open: false
   });
 });
@@ -135,6 +170,7 @@ gulp.task('scripts', [
 gulp.task('default', [
   'sass',
   'sass-styleguide',
+  'copy-bower-css',
   'scripts',
   'browser-sync',
   'watch'

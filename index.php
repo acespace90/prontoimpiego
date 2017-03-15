@@ -26,7 +26,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 $app['debug'] = true;
 $app['current_url'] = $_SERVER['REQUEST_URI'];
-$app['project'] = "ITCSS";
+$app['project'] = "Prontoimpiego";
 $app['build_dir'] = 'build/';
 $app['env'] = getenv('APP_ENV') ? getenv('APP_ENV') : "dev";
 $app['base_url'] = 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['SCRIPT_NAME'];

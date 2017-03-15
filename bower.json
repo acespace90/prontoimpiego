@@ -1,6 +1,6 @@
 {
-  "name": "coop",
-  "description": "coop website",
+  "name": "prontoimpiego",
+  "description": "prontoimpiego website",
   "main": "index.js",
   "authors": [
     "Gnv"
@@ -13,7 +13,7 @@
   "moduleType": [
     "node"
   ],
-  "homepage": "https://bitbucket.org/gnvpartners/coop-alleanza#readme",
+  "homepage": "https://github.com/acespace90/prontoimpiego.git",
   "ignore": [
     "**/.*",
     "node_modules",

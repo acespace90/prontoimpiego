@@ -1,45 +1,40 @@
 @charset "UTF-8";
 
 // SETTINGS
-@import "settings/settings.global";
-@import "settings/settings.colors";
-@import "settings/settings.typo";
-@import "settings/settings.buttons";
-@import "settings/settings.foundation";
-@import "settings/settings.breakpoints";
-@import "settings/settings.grid";
+@import "01-settings/settings.global";
+@import "01-settings/settings.colors";
+@import "01-settings/settings.typo";
+@import "01-settings/settings.buttons";
+@import "01-settings/settings.foundation";
+@import "01-settings/settings.breakpoints";
+@import "01-settings/settings.grid";
 
 // TOOLS
-@import "tools/tools.colors";
-@import "tools/tools.typo";
-@import "tools/tools.buttons";
-@import "tools/tools.mixins";
+@import "02-tools/tools.colors";
+@import "02-tools/tools.typo";
+@import "02-tools/tools.buttons";
+@import "02-tools/tools.mixins";
 
 // GENERIC
-@import "generic/generic.normalize";
-@import "generic/generic.box-sizing";
-@import "generic/generic.reset";
+@import "03-generic/generic.normalize";
+@import "03-generic/generic.box-sizing";
+@import "03-generic/generic.reset";
 
 // BASE
-@import "base/base.page";
-@import "base/base.headings";
-@import "base/base.links";
-@import "base/base.lists";
-@import "base/base.images";
-@import "base/base.forms";
+@import "04-base/base.page";
+@import "04-base/base.headings";
+@import "04-base/base.links";
+@import "04-base/base.lists";
+@import "04-base/base.images";
+@import "04-base/base.forms";
 
 // OBJECTS
-@import "objects/objects.bottom-spacing";
-@import "objects/objects.form";
-@import "objects/objects.links";
-
-// STYLEGUIDE
-@import "styleguide/sg";
-
-// VENDOR
-@import "vendor/font-awesome";
+@import "05-objects/*.*.scss";
 
 // BLOCKS
-@import "blocks/*.*.scss";
+@import "06-components/*.*.scss";
+
+// VENDOR
+
 
 // TRUMPS
