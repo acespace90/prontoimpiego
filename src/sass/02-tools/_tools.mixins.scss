@@ -31,7 +31,7 @@
 /*------------------------------------*\
     Clearfix
 \*------------------------------------*/
-@mixin gnv-clearfix(){
+@mixin clearfix(){
   &:before,
   &:after {
     content: ' ';

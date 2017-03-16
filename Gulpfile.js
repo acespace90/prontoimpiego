@@ -155,7 +155,7 @@ gulp.task('watch', function () {
 
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: "localhost/lol",
+    proxy: "localhost/prontoimpiego",
     open: false
   });
 });

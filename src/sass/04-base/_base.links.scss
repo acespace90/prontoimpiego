@@ -1,5 +1,5 @@
-$base-color-link: 						map-get($colors, primary);
-$base-color-link-hover: 			darken($base-color-link, 15%);
+$base-color-link:				map-get($colors, primary);
+$base-color-link-hover:	darken($base-color-link, 15%);
 
 a {
   text-decoration: none;

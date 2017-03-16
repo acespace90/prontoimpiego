@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <title>Test ITCSS</title>
+    <title>Pronto Impiego</title>
     <meta name="description" content="test itcss">
 
-    {% if app.env == "dev" %}
-      <link rel="stylesheet" href="{{ app.asset_url }}css/main.css" />
-    {% else %}
-      <link rel="stylesheet" href="{{ app.asset_url }}css/main.min.css" />
-    {% endif %}
+    <link rel="stylesheet" href="{{ app.asset_url }}css/main.min.css" />
 
     <!--<script src="{{ app.asset_url }}js/head.min.js"></script>-->
 

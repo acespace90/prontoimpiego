@@ -1428,31 +1428,6 @@ img {
 .o-bottom-spacing-big {
   margin-bottom: 60px; }
 
-.o-with-floating-label + label.floating-label {
-  font-family:  "Source Sans Pro", sans-serif ;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5em;
-  color: #CCCCCC;
-  position: relative;
-  top: -33px;
-  left: 10px;
-  transition: all .3s ease;
-  height: 0;
-  cursor: text;
-  font-weight: 400; }
-
-.o-with-floating-label:focus + label.floating-label,
-.o-with-floating-label:valid + label.floating-label {
-  color: #2CA0D8;
-  font-family:  "Source Sans Pro", sans-serif ;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.33333em;
-  top: -60px;
-  left: 0;
-  font-weight: 700; }
-
 .o-neutral-link {
   color: inherit; }
   .o-neutral-link:hover {
@@ -1576,41 +1551,5 @@ img {
     .button--secondary.button--simple, .button--secondary.button--simple:hover {
       color: #EB7924;
       background: transparent; }
-
-.b-header {
-  background: #CCCCCC;
-  width: 100%;
-  padding: 10px 0; }
-  .b-header__row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center; }
-  .b-header__logo {
-    text-align: center;
-    margin-bottom: 15px; }
-    @media screen and (min-width: 30.0625em) {
-      .b-header__logo {
-        width: 16.66667%;
-        margin-bottom: 0; } }
-  @media screen and (min-width: 30.0625em) {
-    .b-header__menu {
-      width: 83.33333%; } }
-  @media screen and (min-width: 30.0625em) {
-    .b-header__menu ul {
-      float: right; } }
-  .b-header__menu ul li {
-    width: 25%;
-    float: left; }
-    @media screen and (min-width: 30.0625em) {
-      .b-header__menu ul li {
-        width: auto; } }
-    .b-header__menu ul li a {
-      display: block;
-      padding: 0 20px;
-      text-transform: uppercase;
-      font-family:  "Source Sans Pro", sans-serif ;
-      font-size: 14px;
-      font-size: 0.875rem;
-      line-height: 1.42857em; }
 
 /*# sourceMappingURL=main.css.map */
