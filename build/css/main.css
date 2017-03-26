@@ -1219,42 +1219,6 @@ html {
   font-size: 1rem;
   line-height: 1.5em; }
 
-h1 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 40px;
-  font-size: 2.5rem;
-  line-height: 1.375em; }
-
-h2 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 31px;
-  font-size: 1.9375rem;
-  line-height: 1.35484em; }
-
-h3 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 23px;
-  font-size: 1.4375rem;
-  line-height: 1.34783em; }
-
-h4 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5em; }
-
-h5 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.42857em; }
-
-h6 {
-  font-family:  "Asap", sans-serif ;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.33333em; }
-
 a {
   text-decoration: none;
   color: #39649A; }
@@ -1515,7 +1479,7 @@ img {
     text-decoration: underline; }
 
 .c-hero {
-  height: 600px;
+  height: 90vh;
   padding-top: 50px; }
   @media screen and (max-width: 48em) {
     .c-hero {
@@ -1526,5 +1490,61 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom; }
+
+.c-hero__header {
+  margin-bottom: 80px; }
+
+.c-hero__main,
+.c-hero__cta {
+  width: 83.33333%;
+  margin-left: 8.33333%; }
+  .c-hero__main:last-child:last-child,
+  .c-hero__cta:last-child:last-child {
+    float: left; }
+  @media screen and (max-width: 48em) {
+    .c-hero__main,
+    .c-hero__cta {
+      width: 100%;
+      margin-left: 0%; } }
+
+.c-hero__main {
+  margin-bottom: 40px; }
+
+h1, h2 {
+  color: #fff; }
+
+h1 {
+  font-size: 60px;
+  line-height: normal;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  max-width: 840px;
+  margin-bottom: 15px; }
+  @media screen and (max-width: 64em) {
+    h1 {
+      font-size: 40px; } }
+  @media screen and (max-width: 48em) {
+    h1 {
+      font-size: 32px; } }
+  @media screen and (max-width: 40em) {
+    h1 {
+      font-size: 28px; } }
+
+h2 {
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  font-size: 20px; }
+  @media screen and (max-width: 64em) {
+    h2 {
+      font-size: 18px; } }
+  @media screen and (max-width: 48em) {
+    h2 {
+      font-size: 16px; } }
+  @media screen and (max-width: 40em) {
+    h2 {
+      font-size: 14px; } }
 
 /*# sourceMappingURL=main.css.map */

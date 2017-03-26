@@ -1,6 +1,7 @@
 .c-hero{
 
-	height: 600px;
+	height: 90vh;
+	// min-height: 600px;
 	padding-top: 50px;
 	@include breakpoint(medium down) {
 		padding-top: 25px;
@@ -14,3 +15,62 @@
 	background-repeat: no-repeat;
 	background-position: center bottom;
 }
+
+	.c-hero__header{
+		margin-bottom: 80px;
+	}
+
+	.c-hero__main,
+	.c-hero__cta{
+		@include grid-column-size(10);
+		@include grid-column-offset(1);
+		@include grid-column-end();
+		@include breakpoint(medium down) {
+			@include grid-column-size(12);
+			@include grid-column-offset(0);
+		}
+	}
+
+	.c-hero__main{
+		margin-bottom: 40px;
+	}
+
+	h1, h2{
+		color: #fff;
+	}
+
+	h1{
+		font-size: 60px;
+		line-height: normal;
+		font-weight: fw(regular);
+		display: block;
+		width: 100%;
+		max-width: 840px;
+		margin-bottom: 15px;
+		@include breakpoint(large down) {
+			font-size: 40px;
+		}
+		@include breakpoint(medium down) {
+			font-size: 32px;
+		}
+		@include breakpoint(small down) {
+			font-size: 28px;
+		}
+	}
+
+	h2{
+		font-weight: fw(regular);
+		display: block;
+		width: 100%;
+		max-width: 500px;
+		font-size: 20px;
+		@include breakpoint(large down) {
+			font-size: 18px;
+		}
+		@include breakpoint(medium down) {
+			font-size: 16px;
+		}
+		@include breakpoint(small down) {
+			font-size: 14px;
+		}
+	}
