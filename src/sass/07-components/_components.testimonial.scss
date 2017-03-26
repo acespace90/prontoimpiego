@@ -1,0 +1,25 @@
+.c-testimonial{
+	background-color: #fff;
+	padding: 0 30px 48px 30px;
+	@include border-radius(3px);
+	border: 1px solid transparent;
+}
+
+	.c-testimonial__image{
+		text-align: center;
+		margin-bottom: 20px;
+		margin-top: -40px;
+	}
+
+	.c-testimonial__text{
+		@include font-scale(small);
+		font-style: italic;
+		color: gray(base);
+		margin-bottom: 20px;
+	}
+
+	.c-testimonial__name{
+		@include font-scale(small);
+		color: gray(dark);
+		text-align: center;
+	}

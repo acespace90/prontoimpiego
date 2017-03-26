@@ -1,0 +1,20 @@
+<div class="c-testimonials">
+	<div class="row">
+		<div class="c-testimonials__wrapper column">
+			
+			<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		    	{% for i in 0..6 %}
+						<div class="swiper-slide">
+			      	{% include 'blocks/testimonial.html.twig' %}
+			      </div>		    	    
+		    	{% endfor %}
+		    </div>
+		    <div class="swiper-pagination"></div>
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+			</div>
+
+		</div>
+	</div>
+</div>

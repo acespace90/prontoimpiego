@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="24px" viewBox="0 0 14 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>down carat</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-generica" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_generale" transform="translate(-1318.000000, -658.000000)" fill="#565B61">
+            <g id="Group-8" transform="translate(1318.000000, 658.000000)">
+                <path d="M17,5 C16.8115246,5 7,15 7,15 L-3,5 C-3.22045902,5 -5,7 -5,7 C-5,7.18905197 7,19 7,19 C7.19239344,19 19,7 19,7 C19,6.804127 17,5 17,5 Z" id="down-carat" transform="translate(7.000000, 12.000000) rotate(-90.000000) translate(-7.000000, -12.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

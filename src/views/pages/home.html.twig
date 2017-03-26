@@ -8,11 +8,41 @@
 
 {% block content %}
 
-	{% include 'blocks/hero.html.twig' with { hero_modifier: 'c-hero--home' } %}
+	<div class="page_landing">
 
+	{% include 'blocks/hero.html.twig' with { hero_modifier: 'c-hero--home' } %}
 	
+	<section class="page_landing__reliability">
+		{% include 'blocks/testimonials.html.twig' %}
+	</section>
+
+	</div>
 
 {% endblock %}
 
 {% block javascript %}
+<script>
+	$(document).ready(function () {
+
+    var mySwiper = new Swiper ('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      slidesPerView: 3,
+      spaceBetween: 15,
+      breakpoints: {
+		    768: {
+		      slidesPerView: 2,
+		      spaceBetween: 30,
+		    },
+		    640: {
+		      slidesPerView: 1,
+		      spaceBetween: 30
+		    }
+		  }
+    })
+
+  });
+</script>
 {% endblock %}

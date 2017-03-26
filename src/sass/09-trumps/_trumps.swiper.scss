@@ -1,0 +1,35 @@
+.swiper-button-next,
+.swiper-button-prev{
+	width: 14px;
+	height: 24px;
+	background-size: contain;
+}
+
+.swiper-button-next{
+	background-image: url('../images/svgs/arrow-right.svg');
+}
+
+.swiper-button-prev{
+	background-image: url('../images/svgs/arrow-left.svg');
+}
+
+.swiper-pagination{
+	position: relative;
+	margin-top: 20px;
+}
+
+.swiper-pagination-bullet{
+	width: 10px;
+	height: 10px;
+	background-color: color(primary);
+}
+
+.swiper-pagination-bullet-active{
+	background-color: color(primary);
+}
+
+.swiper-container{
+	.c-testimonials & {
+		padding-top: 80px;
+	}
+}

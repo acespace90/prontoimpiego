@@ -31,10 +31,14 @@
 // OBJECTS
 @import "05-objects/*.*.scss";
 
-// BLOCKS
-@import "06-components/*.*.scss";
+// PAGES
+@import "06-pages/*.*.scss";
+
+// COMPONENTS
+@import "07-components/*.*.scss";
 
 // VENDOR
-
+@import "08-vendor/swiper";
 
 // TRUMPS
+@import "09-trumps/trumps.swiper";

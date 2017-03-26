@@ -55,7 +55,7 @@ gulp.task('sass-styleguide', function () {
 // Copy Bower Css
 gulp.task('copy-bower-css', function () {
   gulp.src([
-    // bwpath + 'jquery-date-range-picker/dist/daterangepicker.min.css',
+    bwpath + 'swiper/dist/css/swiper.min.css'
   ])
     .pipe(rename({
       prefix: "_",
@@ -66,7 +66,7 @@ gulp.task('copy-bower-css', function () {
       opt.basename = opt.basename.replace('.min', '');
       return opt;
     }))
-    .pipe(gulp.dest('./src/sass/vendor'))
+    .pipe(gulp.dest('./src/sass/08-vendor'))
 });
 
 
@@ -111,6 +111,7 @@ gulp.task('headjs', function() {
 gulp.task('footerjs', function() {
   gulp.src([
     bwpath + 'jquery/dist/jquery.min.js',
+    bwpath + 'swiper/dist/js/swiper.jquery.min.js'
   ])
   .pipe(sourcemaps.init({loadMaps: true}))
   .pipe(concat('footer.min.js'))

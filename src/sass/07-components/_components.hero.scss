@@ -1,7 +1,6 @@
 .c-hero{
 
-	height: 90vh;
-	// min-height: 600px;
+	min-height: 600px;
 	padding-top: 50px;
 	@include breakpoint(medium down) {
 		padding-top: 25px;
