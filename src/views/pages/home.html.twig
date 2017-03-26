@@ -9,12 +9,18 @@
 {% block content %}
 
 	<div class="page_landing">
-
-	{% include 'blocks/hero.html.twig' with { hero_modifier: 'c-hero--home' } %}
 	
-	<section class="page_landing__reliability">
-		{% include 'blocks/testimonials.html.twig' %}
-	</section>
+		<section class="page_landing__hero">
+			{% include 'blocks/hero.html.twig' with { hero_modifier: 'c-hero--home' } %}
+		</section>
+		
+		<section class="page_landing__testimonials">
+			{% include 'blocks/testimonials.html.twig' %}
+		</section>
+
+		<section class="page_landing__steps">
+			{% include 'blocks/steps.html.twig' %}
+		</section>
 
 	</div>
 

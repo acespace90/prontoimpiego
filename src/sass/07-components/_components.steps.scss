@@ -1,0 +1,29 @@
+.c-steps{
+
+}
+
+	.c-steps__title{
+		text-align: center;
+		color: color(primary);
+		@include font-scale(large);
+		margin-bottom: 80px;
+		@include breakpoint(medium down) {
+			@include font-scale(mid);		
+		}
+		@include breakpoint(small down) {
+			@include font-scale(base);		
+		}
+		h3{
+			font-weight: fw(regular);
+		}
+	}
+
+	.c-steps__item{
+		@include grid-column-size(3);
+		@include breakpoint(medium down) {
+			@include grid-column-size(6);
+		}
+		@include breakpoint(xsmall down) {
+			@include grid-column-size(12);
+		}
+	}

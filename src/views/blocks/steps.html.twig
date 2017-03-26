@@ -1,0 +1,38 @@
+<div class="c-steps">
+	
+	<div class="row">
+		<div class="c-steps__title column">
+			<h3>
+			Trovare lavoro<br> <strong>non è mai stato così semplice</strong>
+			</h3>
+		</div>
+	</div>
+
+	<div class="c-steps__items row">
+		<div class="c-steps__item column">
+			{% include 'blocks/step.html.twig' with {
+				step_image: 'images/svgs/responsive.svg',
+				step_text:	'<strong>Il tuo portale del lavoro</strong> sempre con te.'
+			} %}
+		</div>
+		<div class="c-steps__item column">
+			{% include 'blocks/step.html.twig' with {
+				step_image: 'images/svgs/list.svg',
+				step_text:	'Completa <strong>in pochi click</strong> il tuo curriculum online.'
+			} %}
+		</div>
+		<div class="c-steps__item column">
+			{% include 'blocks/step.html.twig' with {
+				step_image: 'images/svgs/placeholder.svg',
+				step_text:	'<strong>Seleziona le aziende</strong> più attinenti al tuo profilo.'
+			} %}
+		</div>
+		<div class="c-steps__item column">
+			{% include 'blocks/step.html.twig' with {
+				step_image: 'images/svgs/handshake.svg',
+				step_text:	'<strong>Invia subito la tua candidatura</strong> alle aziende scelte.'
+			} %}
+		</div>
+	</div>
+
+</div>
