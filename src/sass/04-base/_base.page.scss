@@ -1,5 +1,5 @@
 html {
-  font-size: $base-font-sizing * 1px;
   background-color: #fff;
   color: $color-text;
+  @include font-scale(base);
 }

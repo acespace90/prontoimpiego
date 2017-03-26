@@ -9,9 +9,9 @@ a {
   &:focus {
     color: $base-color-link-hover;
   }
-
-  .b-header & {
-  	color: gray(dark);
+	
+  .c-header & {
+  	color: #fff;
   }
 
 }

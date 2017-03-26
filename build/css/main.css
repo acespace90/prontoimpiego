@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Asap:400,700");
 .row {
   max-width: 1220px;
   margin-right: auto;
@@ -737,37 +737,37 @@
         margin-bottom: 0; } }
 
 .font-primary.x-small {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.33333em; }
 
 .font-primary.small {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.42857em; }
 
 .font-primary.base {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5em; }
 
 .font-primary.mid {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.34783em; }
 
 .font-primary.large {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 31px;
   font-size: 1.9375rem;
   line-height: 1.35484em; }
 
 .font-primary.x-large {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 40px;
   font-size: 2.5rem;
   line-height: 1.375em; }
@@ -1212,53 +1212,56 @@ hr {
   padding: 0; }
 
 html {
-  font-size: 16px;
   background-color: #fff;
-  color: #333333; }
+  color: #333333;
+  font-family:  "Asap", sans-serif ;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5em; }
 
 h1 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 40px;
   font-size: 2.5rem;
   line-height: 1.375em; }
 
 h2 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 31px;
   font-size: 1.9375rem;
   line-height: 1.35484em; }
 
 h3 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.34783em; }
 
 h4 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5em; }
 
 h5 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.42857em; }
 
 h6 {
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.33333em; }
 
 a {
   text-decoration: none;
-  color: #2CA0D8; }
+  color: #39649A; }
   a:hover, a:focus {
-    color: #1d729b; }
-  .b-header a {
-    color: #5F5656; }
+    color: #244062; }
+  .c-header a {
+    color: #fff; }
 
 ul {
   list-style-type: none;
@@ -1288,7 +1291,7 @@ img {
 .base-form label {
   display: block;
   width: 100%;
-  font-family:  "Source Sans Pro", sans-serif ;
+  font-family:  "Asap", sans-serif ;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5em;
@@ -1336,7 +1339,7 @@ img {
   .base-form input[type="url"]:focus,
   .base-form input[type="color"]:focus,
   .base-form textarea:focus {
-    border: solid 1px #2CA0D8; }
+    border: solid 1px #39649A; }
   .base-form input[type="text"]::-webkit-input-placeholder, .base-form input[type="text"]::-webkit-input-placeholder,
   .base-form input[type="password"]::-webkit-input-placeholder,
   .base-form input[type="password"]::-webkit-input-placeholder,
@@ -1367,7 +1370,7 @@ img {
   .base-form textarea::-webkit-input-placeholder,
   .base-form textarea::-webkit-input-placeholder {
     color: #CCCCCC;
-    font-family:  "Source Sans Pro", sans-serif ;
+    font-family:  "Asap", sans-serif ;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5em; }
@@ -1401,7 +1404,7 @@ img {
   .base-form textarea:-moz-placeholder,
   .base-form textarea::-moz-placeholder {
     color: #CCCCCC;
-    font-family:  "Source Sans Pro", sans-serif ;
+    font-family:  "Asap", sans-serif ;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5em; }
@@ -1440,32 +1443,28 @@ img {
   display: inline-block;
   -webkit-appearance: none;
   -moz-appearance: none;
-  font-family:  "Source Sans Pro", sans-serif ;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.42857em;
+  font-family:  "Asap", sans-serif ;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5em;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
   color: #fff;
   background-color: #ccc;
   transition: background 0.5s ease;
-  padding: 12px 30px;
+  padding: 15px 25px;
   border: 1px solid transparent;
   cursor: pointer;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
   .button:hover, .button:focus {
     background-color: #b3b3b3;
     color: #fff;
     text-decoration: none; }
-  .button--rounded {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px; }
-  .button--simple, .button--simple:hover {
-    background: transparent;
-    color: inherit; }
   .button--icon span {
     display: inline-block;
     vertical-align: middle; }
@@ -1477,79 +1476,55 @@ img {
     .button--icon svg * {
       fill: #fff;
       stroke: #fff; }
-  .button--x-small {
-    padding: 4px 15px;
-    font-family:  "Source Sans Pro", sans-serif ;
-    font-size: 12px;
-    font-size: 0.75rem;
-    line-height: 1.33333em; }
   .button--small {
     padding: 6px 20px; }
-  .button--big {
-    padding: 18px 36px; }
   .button--primary {
     color: #fff;
-    background-color: #2CA0D8;
+    background-color: #36BD77;
     transition: background 0.5s ease; }
     .button--primary:hover, .button--primary:focus {
-      background-color: #2182b0;
+      background-color: #2b955e;
       color: #fff;
       text-decoration: none; }
-    .button--primary.button--inverse {
-      cursor: pointer;
-      color: #2CA0D8;
-      border: 1px solid transparent;
-      box-shadow: inset 0 0 20px rgba(44, 160, 216, 0);
-      outline: 1px solid #2CA0D8;
-      outline-color: rgba(44, 160, 216, 0.5);
-      outline-offset: 0px;
-      text-shadow: none;
-      background: transparent;
-      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1); }
-      .button--primary.button--inverse:focus {
-        background: transparent;
-        color: #2CA0D8; }
-      .button--primary.button--inverse:hover {
-        border: 1px solid #2CA0D8;
-        color: #2CA0D8;
-        background: transparent;
-        outline: 1px solid rgba(44, 160, 216, 0);
-        outline-offset: 15px;
-        text-decoration: none; }
-    .button--primary.button--simple, .button--primary.button--simple:hover {
-      color: #2CA0D8;
-      background: transparent; }
-  .button--secondary {
-    color: #fff;
-    background-color: #EB7924;
-    transition: background 0.5s ease; }
-    .button--secondary:hover, .button--secondary:focus {
-      background-color: #ca6112;
-      color: #fff;
-      text-decoration: none; }
-    .button--secondary.button--inverse {
-      cursor: pointer;
-      color: #EB7924;
-      border: 1px solid transparent;
-      box-shadow: inset 0 0 20px rgba(235, 121, 36, 0);
-      outline: 1px solid #EB7924;
-      outline-color: rgba(235, 121, 36, 0.5);
-      outline-offset: 0px;
-      text-shadow: none;
-      background: transparent;
-      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1); }
-      .button--secondary.button--inverse:focus {
-        background: transparent;
-        color: #EB7924; }
-      .button--secondary.button--inverse:hover {
-        border: 1px solid #EB7924;
-        color: #EB7924;
-        background: transparent;
-        outline: 1px solid rgba(235, 121, 36, 0);
-        outline-offset: 15px;
-        text-decoration: none; }
-    .button--secondary.button--simple, .button--secondary.button--simple:hover {
-      color: #EB7924;
-      background: transparent; }
+
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.c-header__companies {
+  color: #fff;
+  font-family:  "Asap", sans-serif ;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.42857em; }
+  @media screen and (max-width: 48em) {
+    .c-header__companies {
+      display: none; } }
+
+.c-header__companies--mobile {
+  display: none;
+  font-family:  "Asap", sans-serif ;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.42857em; }
+  @media screen and (max-width: 48em) {
+    .c-header__companies--mobile {
+      display: block; } }
+  .c-header__companies--mobile a {
+    text-decoration: underline; }
+
+.c-hero {
+  height: 600px;
+  padding-top: 50px; }
+  @media screen and (max-width: 48em) {
+    .c-hero {
+      padding-top: 25px; } }
+
+.c-hero--home {
+  background-image: url("../images/img-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom; }
 
 /*# sourceMappingURL=main.css.map */

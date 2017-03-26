@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Asap:400,700');
 
 $base-font-sizing: 16;
 
 // Fonts
 $ff-primary: (
 
-  stack: ' "Source Sans Pro", sans-serif ',
+  stack: ' "Asap", sans-serif ',
 
   x-small: (
     font-size:    12,
@@ -39,6 +39,7 @@ $ff-primary: (
 
 );
 
+
 $fonts: (
   font-primary: $ff-primary
 );
@@ -47,9 +48,6 @@ $font-default: $ff-primary;
 
 // Weights
 $f-weights: (
-  light:      300,
-  normal:     400,
-  bold:       700,
-  extrabold:  800,
-  heavy:      900
+  regular:  400,
+  bold:     700
 );

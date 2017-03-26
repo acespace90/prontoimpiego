@@ -1,0 +1,16 @@
+.c-hero{
+
+	height: 600px;
+	padding-top: 50px;
+	@include breakpoint(medium down) {
+		padding-top: 25px;
+	}
+
+}
+
+.c-hero--home{
+	background-image: url('../images/img-home.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}

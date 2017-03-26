@@ -1,0 +1,28 @@
+.c-header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+	.c-header__logo{
+
+	}
+
+	.c-header__companies{
+		color: #fff;
+		@include font-scale(small);
+		@include breakpoint(medium down) {
+			display: none;
+		}
+	}
+
+	.c-header__companies--mobile{
+		display: none;
+		@include font-scale(small);
+		@include breakpoint(medium down) {
+			display: block;
+		}
+		a{
+			text-decoration: underline;
+		}
+	}

@@ -1,0 +1,43 @@
+.button{
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @include font-scale(base);
+  font-weight: fw(bold);
+  text-align: center;
+  text-decoration: none;
+  @include gnv-button-color(#fff, #ccc);
+  @include gnv-button-size(base);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  @include border-radius($base-radius);
+  
+  &--icon{
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      margin-right: 5px;
+      * {
+        fill: #fff;
+        stroke: #fff;
+      }
+    }
+  }
+  
+  // Sizes
+  &--small{
+    @include gnv-button-size(small);
+  }
+
+  // Colors
+  &--primary{
+    @include gnv-button-color( #fff, color(success) );
+  }
+
+}
